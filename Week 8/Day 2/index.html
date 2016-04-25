@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CountDown">
+<head>
+    <meta charset="UTF-8">
+    <title>The Final CountDown</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+</head>
+<body ng-controller="FinalCountDown">
+    <div class="container">
+    {{count}}
+    
+    <button ng-show="!hide" ng-click="createTimer()">Start Down Count Down</button>
+    <button ng-click="reset()">Reset</button>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>

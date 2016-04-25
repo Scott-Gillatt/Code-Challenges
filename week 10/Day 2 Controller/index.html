@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Fire">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FireBase</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+</head>
+
+<body ng-controller="FireController">
+    {{2+2}} {{hello}}
+
+    <input type="text" ng-model="data.text"/>
+    <h1>You Said: {{data.text}}</h1>
+    
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controller.js"></script>
+    <script src="app/services/dataservice.js"></script>
+</body>
+
+</html>

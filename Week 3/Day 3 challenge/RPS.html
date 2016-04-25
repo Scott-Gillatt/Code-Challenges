@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <h1>Can you beat the AI? Choose carefully!! <br>
+    Choose Paper, Rock, or Scissors
+    </h1>
+    <button onclick="playPaper()">Paper</button>
+    <button onclick="playRock()">Rock</button>
+    <button onclick="playScissors()">Scissors</button>
+    <p>The Winner is <span id="winner"></span>!</p>
+
+    <script>
+        var winner;
+        var playerChoice;
+        var AI;
+        var aiAnswer;
+        
+        function aiChoice(){
+            aiAnswer = Math.floor((Math.random() * 3) + 1);
+            if (aiAnswer === 1){
+               return "paper";
+            }
+            else if (aiAnswer === 2){
+                return "rock";
+            }
+            else if (aiAnswer === 3){
+               return "scissors";
+            }
+        }
+        
+        function playPaper(){
+            playerChoice = "paper";
+            AI = aiChoice();
+            game(playerChoice, AI);
+            declare_winner(winner);
+        }
+        function playRock(){
+            playerChoice = "rock";
+        }
+        function playScissors(){
+            playerChoice = "scissors";
+        }
+        
+        function game (playerChoice, AI){
+            if (playerChoice === "paper" && AI === "paper"){
+                winner = "TIE!!"
+            } else if (playerChoice === "paper" && AI === "rock"){
+                winner = "Player!";
+            } else {
+                winner = "AI"
+            }
+            
+        }
+        function declare_winner(winner){
+           var winnerElem = document.getElementById("winner").textContent = winner
+        }
+        
+    </script>
+</body>
+
+</html>

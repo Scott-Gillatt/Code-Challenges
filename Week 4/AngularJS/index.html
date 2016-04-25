@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Week4 Day3</title>
+    <style>
+        .oddnumber {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="dogController">
+        <input type="text" ng-model="name"> {{name}}
+        <table>
+            <tr ng-repeat="dog in dogs | filter:name | orderBy:'name'" ng-class-odd="'oddnumber'">
+                <td>{{dog.name | uppercase}}</td>
+                <td>{{dog.type | lowercase}}</td>
+            </tr>
+        </table>
+        <h2>New Dog</h2> Name:
+        <input type="text" ng-model="newdog.name" />
+        <br> Type:
+        <input type="text" ng-model="newdog.type" />
+        <br>
+        <button ng-click="addNewDog()"> Add Dog </button>
+        </div>
+        
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script>
+        var myApp = angular.module("myApp", []);
+        
+        myApp.controller('dogController', function($scope){
+            $scope.dogs =[
+                {name: 'tony', type: 'Dalmatian'}, 
+                {name: 'ron', type:'chihuahua'}, 
+                {name: 'dave', type: 'bulldong'}
+                ];
+              $scope.addNewDog= function(){
+                  $scope.dogs.push(
+                   {
+                       name: $scope.newdog.name,
+                       type: $scope.newdog.type
+                   })
+        }});
+    </script>
+</body>
+
+</html>

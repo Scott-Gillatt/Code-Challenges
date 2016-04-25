@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="increase">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Increase 1</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+</head>
+
+<body ng-controller="IncreaseController">
+    <div class="container">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="panel panel-success">
+                <div class="panel-heading panel-info">Number</div>
+                <div class="panel-body">
+                    <button ng-click="decrease()">Decrease By 1</button>
+                    {{numbers}}
+                    <button ng-click="increase()">Increase By 1</button>
+                    <button ng-click="times()">Times by current Number</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <form ng-submit="leapyears(leapYear)" class="form-inline">
+        <div class="form-group">
+            <input type="number" ng-model="leapYear" placeholder="What year were you born?"> {{answer}}
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit">
+        </div>
+    </form>
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</body>
+
+</html>

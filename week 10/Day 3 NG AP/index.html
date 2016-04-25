@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Dog">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogs Directive</title>
+</head>
+<body ng-controller="DogController">
+    {{2+2}}
+    {{hello}}
+    
+    <div ng-repeat="dog in dogs">
+        <dogs-names> </dogs-names>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controller.js"></script>
+    <script src="app/directive/_dogs.js"></script>
+    <script src="app/services/services.js"></script>
+</body>
+</html>
